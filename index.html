@@ -350,24 +350,6 @@ align-items: center;
 gap: 16px; 
 }
 
-.player-container {
-width: 100%;
-aspect-ratio: 16/9;
-background: #0f1015;
-border: 1px solid rgba(255,255,255,0.06);
-border-radius: 10px;
-overflow: hidden;
-position: relative;
-box-shadow: 0 10px 28px rgba(0, 0, 0, 0.45);
-}
-
-.player-header {
-display: flex;
-gap: 10px;
-padding: 10px;
-background: transparent;
-}
-
 .player-btn {
 padding: 10px 18px;
 border-radius: 8px;
@@ -416,18 +398,11 @@ border-color: rgba(255, 255, 255, 0.2);
 box-shadow: 0 0 20px rgba(255, 255, 255, 0.1), inset 0 1px 0 rgba(255, 255, 255, 0.1);
 }
 
-.player-frame {
-position: relative;
-width: 100%;
-padding-top: 56.25%;
-}
-
-.player-frame iframe {
-position: absolute;
-inset: 0;
+.player-container iframe {
 width: 100%;
 height: 100%;
-border: 0;
+border: none;
+background: #000;
 }
 
 .player-note {
@@ -999,7 +974,7 @@ content: "";
 height: 16px;
 width: 16px;
 left: 3px;
-bottom: 3px;
+top: 3px;
 background-color: var(--text-secondary);
 transition: 0.4s;
 border-radius: 50%;
@@ -1011,7 +986,7 @@ border-color: rgba(76, 175, 80, 0.5);
 }
 
 .toggle-switch input:checked + .toggle-slider:before {
-transform: translateX(24px);
+transform: translateX(22px);
 background-color: #4caf50;
 }
 
@@ -1136,6 +1111,14 @@ transition: width .3s ease;
 .tab-item.active::after { width: 100%; }
 .tab-content { display: none; }
 .tab-content.active { display: block; }
+
+.player-header {
+display: flex;
+gap: 10px;
+padding: 10px 0;
+background: transparent;
+margin-bottom: 10px;
+}
 
 .player-container {
 width: 100%;
@@ -1486,6 +1469,10 @@ padding: 2rem 20px;
   .search-wrapper { display: none; }
   .user-avatar-btn { width: 36px; height: 36px; font-size: 14px; }
   .hero-title { font-size: 26px; }
+  .player-container {
+    aspect-ratio: auto;
+    height: 280px;
+  }
   .filters { flex-direction: column; }
   .filter-select { width: 100%; }
   .card-list, .catalog-grid { grid-template-columns: repeat(auto-fit, minmax(140px, 1fr)); }
@@ -2712,13 +2699,11 @@ ${anime.score ? `
 <h1>${this.escapeHtml(anime.russian)}</h1>
 ${anime.name ? `<h2>${this.escapeHtml(anime.name)}</h2>` : ''}
 
-<div class="player-container" id="playerContainer">
-  <div class="player-header" id="playerHeader"></div>
-  <div class="player-frame">
-    <iframe id="playerFrame0" src="about:blank" allowfullscreen loading="lazy"></iframe>
-    <iframe id="playerFrame1" src="about:blank" allowfullscreen loading="lazy" style="display:none"></iframe>
-  </div>
-  <div class="player-note">Если плеер не работает — переключитесь на другой.</div>
+<div class="player-container">
+<iframe 
+src="https://kodik.info/find-player?shikimoriID=${id}" 
+allowfullscreen
+></iframe>
 </div>
 
 <div class="tabs">
@@ -2762,10 +2747,6 @@ document.getElementById(tab.dataset.tab)?.classList.add('active');
 });
 
 this.updateFavoriteButtons();
-
-this.debugPlayers(id);
-
-this.initDualPlayers(id);
 },
 
 async showCatalogPage() {

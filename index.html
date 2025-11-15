@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Смотреть аниме онлайн</title>
-<meta name="description" content="Ani Jadx -- Твоя мечта">
+<meta name="description" content="Смотрите аниме онлайн в HD качестве. Большая коллекция аниме с русской озвучкой.">
 <link rel="preconnect" href="https://shikimori.one">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -210,6 +210,7 @@ display: flex; align-items: center; gap: 16px;
 .header-logo {
 cursor: pointer; transition: transform 0.2s ease;
 display: flex; align-items: center; gap: 8px;
+flex-shrink: 0;
 }
 .header-logo:hover { transform: translateY(-2px); }
 .nav-btn {
@@ -245,7 +246,7 @@ background: var(--bg-interactive);
 color: var(--text-primary);
 }
 
-.header-controls { display: flex; align-items: center; gap: 16px; }
+.header-controls { display: flex; align-items: center; gap: 12px; margin-left: auto; }
 .search-wrapper { position: relative; }
 .search-wrapper input {
 background: var(--bg-tertiary); padding: 12px 16px 12px 40px; border-radius: 8px;
@@ -270,6 +271,7 @@ display: grid; place-items: center; font-weight: 700; font-size: 16px; color: va
 border: 1px solid var(--bg-tertiary);
 position: relative;
 overflow: hidden;
+flex-shrink: 0;
 }
 .user-avatar-btn:hover { 
 background-color: var(--bg-interactive-hover);
@@ -1472,11 +1474,17 @@ animation: pulse 2s ease-in-out infinite;
   .container, .catalog-container, .profile-container, .settings-container {
 padding: 2rem 20px;
 }
-  .header { padding: 15px 20px; }
+  .header { padding: 12px 16px; justify-content: flex-start; gap: 12px; }
+  .header-center { position: static; transform: none; }
+  .header-center .nav-btn { display: none; }
+  .header-logo { margin: 0; }
+  .header-logo svg { width: 28px; height: 28px; }
+  .logo-text { font-size: 16px; }
   .header-nav { display: none; }
   .mobile-nav { display: block; }
   body { padding-bottom: 70px; }
-  .search-wrapper input { width: 150px; }
+  .search-wrapper { display: none; }
+  .user-avatar-btn { width: 36px; height: 36px; font-size: 14px; }
   .hero-title { font-size: 26px; }
   .filters { flex-direction: column; }
   .filter-select { width: 100%; }
@@ -2216,6 +2224,8 @@ frame0.style.display = active === 0 ? '' : 'none';
 frame1.style.display = active === 1 ? '' : 'none';
 };
 
+frame0.src = sources[0].url;
+frame1.src = sources[1].url;
 applyActive();
 
 header.addEventListener('click', (e) => {

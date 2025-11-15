@@ -351,18 +351,19 @@ gap: 16px;
 }
 
 .player-btn {
-padding: 10px 18px;
-border-radius: 8px;
+padding: 12px 24px;
+border-radius: 10px;
 font-weight: 600;
-font-size: 13px;
+font-size: 14px;
 color: var(--text-secondary);
-background: var(--bg-interactive);
-border: 1px solid rgba(255, 255, 255, 0.08);
+background: linear-gradient(135deg, var(--bg-interactive), rgba(35, 36, 46, 0.8));
+border: 1px solid rgba(255, 255, 255, 0.12);
 cursor: pointer;
-transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+transition: all 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
 letter-spacing: 0.3px;
 position: relative;
 overflow: hidden;
+box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
 }
 
 .player-btn::before {
@@ -385,10 +386,10 @@ height: 300px;
 
 .player-btn:hover {
 color: var(--text-primary);
-background: var(--bg-interactive-hover);
-border-color: rgba(255, 255, 255, 0.15);
-transform: translateY(-2px);
-box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+background: linear-gradient(135deg, var(--bg-interactive-hover), rgba(44, 45, 56, 0.9));
+border-color: rgba(255, 255, 255, 0.2);
+transform: translateY(-3px);
+box-shadow: 0 8px 20px rgba(0, 0, 0, 0.35);
 }
 
 .player-btn.active {
@@ -502,28 +503,30 @@ background: rgba(255, 255, 255, 0.05);
 .row-link svg { width: 16px; height: 16px; fill: currentColor; }
 
 .card-list, .catalog-grid {
-display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 20px;
+display: grid; grid-template-columns: repeat(auto-fill, minmax(160px, 160px)); gap: 24px; justify-content: start;
 }
 .anime-card { 
  display: block; 
- transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+ transition: all 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
  cursor: pointer;
  position: relative;
+ border-radius: 16px;
+ overflow: hidden;
 }
 .anime-card:hover { 
- transform: translateY(-8px) scale(1.02); 
+ transform: translateY(-12px) scale(1.03); 
 }
 .anime-card-poster {
  position: relative; margin-bottom: 12px; overflow: hidden;
- border-radius: 14px; background: var(--bg-tertiary);
- border: 1px solid rgba(255, 255, 255, 0.06);
+ border-radius: 16px; background: var(--bg-tertiary);
+ border: 1px solid rgba(255, 255, 255, 0.1);
  aspect-ratio: 2/3;
- box-shadow: 0 8px 24px rgba(0, 0, 0, 0.3), 0 2px 8px rgba(0, 0, 0, 0.2);
- transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+ box-shadow: 0 12px 32px rgba(0, 0, 0, 0.4), 0 4px 12px rgba(0, 0, 0, 0.25);
+ transition: all 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
 }
 .anime-card:hover .anime-card-poster {
- box-shadow: 0 16px 48px rgba(0, 0, 0, 0.4), 0 4px 16px rgba(0, 0, 0, 0.3);
- border-color: rgba(255, 255, 255, 0.12);
+ box-shadow: 0 24px 56px rgba(0, 0, 0, 0.5), 0 8px 20px rgba(0, 0, 0, 0.35);
+ border-color: rgba(255, 255, 255, 0.2);
 }
 .anime-card-poster::after {
  content: '';
@@ -608,15 +611,16 @@ font-size: 16px; color: var(--text-secondary); max-width: 600px; letter-spacing:
 
 .filter-select select {
   width: 100%;
-  background: var(--bg-interactive);
-  border: 1px solid var(--bg-interactive-hover);
-  border-radius: 8px;
+  background: linear-gradient(135deg, var(--bg-interactive), rgba(35, 36, 46, 0.8));
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 10px;
   padding: 12px 40px 12px 16px;
   color: var(--text-primary);
   font-size: 14px;
   font-weight: 600;
   cursor: pointer;
-  transition: all 0.2s ease;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
 }
 
 /* Custom select (closed by default) */
@@ -625,11 +629,11 @@ font-size: 16px; color: var(--text-secondary); max-width: 600px; letter-spacing:
 .custom-select.open { z-index: 50; }
 .custom-select-trigger {
   width: 100%; display: flex; align-items: center; justify-content: space-between;
-  background: var(--bg-interactive); border: none;
-  border-radius: 6px; padding: 8px 10px; color: var(--text-primary); font-size: 12px; font-weight: 600;
-  cursor: pointer; transition: all 0.2s ease; letter-spacing: 0.2px;
+  background: linear-gradient(135deg, var(--bg-interactive), rgba(35, 36, 46, 0.8)); border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 10px; padding: 10px 12px; color: var(--text-primary); font-size: 12px; font-weight: 600;
+  cursor: pointer; transition: all 0.3s ease; letter-spacing: 0.2px; box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
 }
-.custom-select-trigger:hover { background: var(--bg-interactive-hover); }
+.custom-select-trigger:hover { background: linear-gradient(135deg, var(--bg-interactive-hover), rgba(44, 45, 56, 0.9)); border-color: rgba(255, 255, 255, 0.2); box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2); }
 .custom-select-trigger svg { width: 14px; height: 14px; fill: var(--text-secondary); transition: transform 0.2s ease; }
 .custom-select.open .custom-select-trigger svg { transform: rotate(180deg); }
 .custom-options {
@@ -660,13 +664,14 @@ gap: 30px;
 }
 .profile-sidebar {
 background: linear-gradient(135deg, var(--bg-secondary), rgba(18, 19, 26, 0.8));
-border-radius: 16px;
-padding: 28px;
+border-radius: 20px;
+padding: 32px;
 align-self: start;
 text-align: center;
-border: 1px solid rgba(255, 255, 255, 0.08);
-backdrop-filter: blur(16px);
-box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
+border: 1px solid rgba(255, 255, 255, 0.12);
+backdrop-filter: blur(20px);
+box-shadow: 0 12px 40px rgba(0, 0, 0, 0.3), inset 0 1px 0 rgba(255, 255, 255, 0.1);
+transition: all 0.3s ease;
 }
 .profile-avatar {
 width: 120px; height: 120px; border-radius: 50%; 
@@ -695,16 +700,17 @@ gap: 30px;
 }
 .profile-section { 
 background: linear-gradient(135deg, var(--bg-secondary), rgba(18, 19, 26, 0.8));
-border-radius: 16px; 
-padding: 28px;
-border: 1px solid rgba(255, 255, 255, 0.08);
-backdrop-filter: blur(16px);
-box-shadow: 0 4px 16px rgba(0, 0, 0, 0.15);
-transition: all 0.3s ease;
+border-radius: 20px; 
+padding: 32px;
+border: 1px solid rgba(255, 255, 255, 0.1);
+backdrop-filter: blur(20px);
+box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2), inset 0 1px 0 rgba(255, 255, 255, 0.05);
+transition: all 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
 }
 .profile-section:hover {
-border-color: rgba(255, 255, 255, 0.12);
-box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2);
+border-color: rgba(255, 255, 255, 0.15);
+box-shadow: 0 16px 40px rgba(0, 0, 0, 0.3), inset 0 1px 0 rgba(255, 255, 255, 0.08);
+transform: translateY(-2px);
 }
 .profile-section h2 { 
 font-size: 20px; 
@@ -1046,14 +1052,15 @@ z-index: -1;
 .details-meta {
 display: grid; 
 grid-template-columns: 1fr;
-gap: 14px;
+gap: 16px;
 font-size: 14px;
 background: linear-gradient(135deg, var(--bg-secondary), rgba(18, 19, 26, 0.8));
-padding: 24px;
-border-radius: 12px;
-border: 1px solid rgba(255, 255, 255, 0.08);
-box-shadow: 0 4px 16px rgba(0, 0, 0, 0.15);
-backdrop-filter: blur(10px);
+padding: 28px;
+border-radius: 16px;
+border: 1px solid rgba(255, 255, 255, 0.1);
+box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2), inset 0 1px 0 rgba(255, 255, 255, 0.05);
+backdrop-filter: blur(20px);
+transition: all 0.3s ease;
 }
 .details-meta-row { display: flex; justify-content: space-between; }
 .details-meta-label { color: var(--text-secondary); font-weight: 500; letter-spacing: 0.2px; }
@@ -1077,16 +1084,33 @@ border-color: var(--text-secondary);
 .details-description {
 line-height: 1.8;
 color: var(--text-bright);
-background: linear-gradient(135deg, rgba(18, 19, 26, 0.5), rgba(26, 27, 35, 0.3));
-padding: 28px;
-border-radius: 12px;
-border: 1px solid rgba(255, 255, 255, 0.08);
-letter-spacing: 0.2px;
-box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
-backdrop-filter: blur(10px);
+background: linear-gradient(135deg, rgba(18, 19, 26, 0.8), rgba(26, 27, 35, 0.6));
+padding: 40px;
+border-radius: 20px;
+border: 1px solid rgba(255, 255, 255, 0.12);
+letter-spacing: 0.3px;
+box-shadow: 0 12px 40px rgba(0, 0, 0, 0.3), inset 0 1px 0 rgba(255, 255, 255, 0.08);
+backdrop-filter: blur(30px);
+transition: all 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+font-size: 15px;
+}
+.details-description:hover {
+border-color: rgba(255, 255, 255, 0.15);
+box-shadow: 0 16px 48px rgba(0, 0, 0, 0.4), inset 0 1px 0 rgba(255, 255, 255, 0.1);
 }
 .details-description p {
-margin-bottom: 16px;
+margin-bottom: 20px;
+}
+.details-description p:last-child {
+margin-bottom: 0;
+}
+.details-description strong {
+font-weight: 700;
+color: var(--text-primary);
+}
+.details-description em {
+font-style: italic;
+color: var(--text-secondary);
 }
 
 .tabs { display: flex; gap: 1.8rem; margin-bottom: 1.8rem; border-bottom: 1px solid rgba(255, 255, 255, 0.08); overflow-x: auto; scrollbar-width: none; }
@@ -1123,12 +1147,18 @@ margin-bottom: 10px;
 .player-container {
 width: 100%;
 aspect-ratio: 16/9;
-background: #0f1015;
-border: 1px solid rgba(255,255,255,0.06);
-border-radius: 10px;
+background: linear-gradient(135deg, #0f1015, #1a1b23);
+border: 1px solid rgba(255,255,255,0.12);
+border-radius: 20px;
 overflow: hidden;
 position: relative;
-box-shadow: 0 10px 28px rgba(0, 0, 0, 0.45);
+box-shadow: 0 20px 60px rgba(0, 0, 0, 0.7), 0 8px 24px rgba(0, 0, 0, 0.4), inset 0 1px 0 rgba(255, 255, 255, 0.05);
+transition: all 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
+backdrop-filter: blur(10px);
+}
+.player-container:hover {
+border-color: rgba(255,255,255,0.15);
+box-shadow: 0 24px 72px rgba(0, 0, 0, 0.8), 0 12px 32px rgba(0, 0, 0, 0.5), inset 0 1px 0 rgba(255, 255, 255, 0.08);
 }
 
 .player-container iframe {
@@ -1521,16 +1551,6 @@ padding: 2rem 20px;
     <div class="header-center">
       <a href="#home" data-nav="home" class="nav-btn">Главная</a>
       <div class="header-logo">
-        <svg viewBox="0 0 40 40" width="32" height="32" aria-label="AniJadx">
-          <defs>
-            <linearGradient id="g1" x1="0" x2="1" y1="0" y2="1">
-              <stop offset="0" stop-color="#2A2B35"/>
-              <stop offset="1" stop-color="#1A1B23"/>
-            </linearGradient>
-          </defs>
-          <rect x="2" y="2" width="36" height="36" rx="8" fill="url(#g1)" stroke="#333"/>
-          <path d="M20 9 L30 31 H26.5 L24.2 26 H15.8 L13.5 31 H10 L20 9 Z M21.6 22 L20 18.8 L18.4 22 H21.6 Z" fill="#ffffff"/>
-        </svg>
         <span class="logo-text">AniJadx</span>
       </div>
       <a href="#catalog" data-nav="catalog" class="nav-btn">Каталог</a>
@@ -1882,13 +1902,17 @@ await API_RATE_LIMITER.waitForSlot();
 
 const response = await fetch(API_GRAPHQL, {
 method: 'POST',
-headers: { 'Content-Type': 'application/json' },
+headers: { 
+'Content-Type': 'application/json',
+'User-Agent': 'AnimeApp/2.0'
+},
 body: JSON.stringify({ query })
 });
 
 if (!response.ok) {
 if (response.status === 429) {
 console.warn('Rate limit exceeded, waiting...');
+await new Promise(resolve => setTimeout(resolve, 5000)); // Changed from 2000 to 5000
 await new Promise(resolve => setTimeout(resolve, 2000));
 return this.fetchAnimesGraphQL(filters); 
 }
@@ -1898,7 +1922,17 @@ throw new Error(`HTTP error! Status: ${response.status}`);
 const result = await response.json();
 const animes = result.data?.animes || [];
 
-const formattedAnimes = animes.map(anime => ({
+console.log('GraphQL Response animes count:', animes.length);
+if (animes.length > 0) {
+console.log('First anime poster data:', animes[0].poster);
+}
+
+const formattedAnimes = animes.map(anime => {
+const posterUrl = anime.poster?.main2xUrl || anime.poster?.originalUrl;
+if (!posterUrl) {
+console.warn(`Missing poster for anime ${anime.russian} (id: ${anime.id}), will fetch from REST API`);
+}
+return {
 id: anime.id,
 name: anime.name,
 russian: anime.russian,
@@ -1910,10 +1944,29 @@ episodes_aired: anime.episodesAired,
 aired_on: anime.airedOn?.year ? `${anime.airedOn.year}-01-01` : null,
 description: anime.description,
 poster2x: anime.poster?.main2xUrl || null,
-posterUrl: anime.poster?.main2xUrl || anime.poster?.originalUrl,
+posterUrl: posterUrl,
 bannerUrl: anime.screenshots?.[0]?.originalUrl || anime.poster?.originalUrl || anime.poster?.main2xUrl,
-genres: anime.genres
-}));
+genres: anime.genres,
+needsRestData: !posterUrl
+};
+});
+
+// Fetch REST API data for animes without posters
+const animeIds = formattedAnimes.filter(a => a.needsRestData).map(a => a.id);
+if (animeIds.length > 0) {
+console.log(`Fetching REST data for ${animeIds.length} animes without posters`);
+for (const anime of formattedAnimes.filter(a => a.needsRestData)) {
+try {
+const restData = await this.fetchData(`/animes/${anime.id}`);
+if (restData && restData.image) {
+anime.image = restData.image;
+console.log(`Got image for ${anime.russian}:`, restData.image);
+}
+} catch (e) {
+console.warn(`Failed to fetch REST data for ${anime.id}`);
+}
+}
+}
 
 this.state.cache.set(cacheKey, formattedAnimes);
 setTimeout(() => this.state.cache.delete(cacheKey), 300000);
@@ -1981,6 +2034,21 @@ const anime = result.data?.animes?.[0];
 
 if (!anime) return null;
 
+const posterUrl = anime.poster?.main2xUrl || anime.poster?.originalUrl;
+if (!posterUrl) {
+console.warn(`GraphQL: Missing poster for anime ${anime.russian} (id: ${anime.id}), will try REST API`);
+}
+
+// Try to get image data from REST API as fallback
+let restAnime = null;
+if (!posterUrl) {
+try {
+restAnime = await this.fetchData(`/animes/${anime.id}`);
+} catch (e) {
+console.warn(`Failed to fetch REST data for anime ${anime.id}:`, e);
+}
+}
+
 const formatted = {
 id: anime.id,
 name: anime.name,
@@ -1994,7 +2062,8 @@ aired_on: anime.airedOn?.year ? `${anime.airedOn.year}-01-01` : null,
 description: anime.description,
 description_html: anime.descriptionHtml,
 poster2x: anime.poster?.main2xUrl || null,
-posterUrl: anime.poster?.main2xUrl || anime.poster?.originalUrl,
+posterUrl: posterUrl,
+image: restAnime?.image || null,
 genres: anime.genres
 };
 
@@ -2034,23 +2103,32 @@ return null;
 getPosterUrl(anime) {
 if (!anime) return PLACEHOLDER_IMAGE;
 
+// Try GraphQL poster first
 if (anime.posterUrl) {
-return anime.posterUrl.startsWith('http') ? anime.posterUrl : `${API_BASE}${anime.posterUrl}`;
+return anime.posterUrl;
 }
 
+// Try REST API image data
 const image = anime.image || {};
 let imageUrl = image.original || image.preview || image.x96;
 
-if (!imageUrl) return PLACEHOLDER_IMAGE;
-
+if (imageUrl) {
 return imageUrl.startsWith('http') ? imageUrl : `${API_BASE}${imageUrl}`;
+}
+
+// If no image found, log it and return placeholder
+if (anime.russian) {
+console.warn(`No image found for ${anime.russian} (id: ${anime.id})`);
+}
+
+return PLACEHOLDER_IMAGE;
 },
 
 getBannerUrl(anime) {
 if (!anime) return PLACEHOLDER_IMAGE;
 
 if (anime.bannerUrl) {
-return anime.bannerUrl.startsWith('http') ? anime.bannerUrl : `${API_BASE}${anime.bannerUrl}`;
+return anime.bannerUrl;
 }
 
 return this.getPosterUrl(anime);
@@ -2059,38 +2137,57 @@ return this.getPosterUrl(anime);
 escapeHtml: s => String(s || '').replace(/[&<>"']/g, m => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#039;'})[m]),
 
 renderAnimeCard(anime) {
-if(!anime || !anime.russian) return '';
+  if(!anime || !anime.russian) return '';
 
-const posterUrl = this.getPosterUrl(anime);
-const year = anime.aired_on ? new Date(anime.aired_on).getFullYear() : '';
+  const posterUrl = this.getPosterUrl(anime);
+  const year = anime.aired_on ? new Date(anime.aired_on).getFullYear() : '';
 
-return `
-<a href="#details/${anime.id}" class="anime-card" data-id="${anime.id}">
-<div class="anime-card-poster">
-<img 
-src="${posterUrl}" 
-${anime.poster2x ? `srcset="${anime.poster2x} 2x"` : ''}
-alt="${this.escapeHtml(anime.russian)}" 
-loading="lazy"
-onerror="this.src='${PLACEHOLDER_IMAGE}'"
->
-<div class="anime-card-play"><svg viewBox="0 0 24 24"><path d="M8,5.14V19.14L19,12.14L8,5.14Z"/></svg></div>
-</div>
-<h3 class="anime-card-title">${this.escapeHtml(anime.russian)}</h3>
-<div class="anime-card-info">
-${anime.score && anime.score > 0 ? `<span class="anime-card-info-rating"><svg viewBox="0 0 24 24"><path d="M12,17.27L18.18,21L16.54,13.97L22,9.24L14.81,8.62L12,2L9.19,8.62L2,9.24L7.45,13.97L5.82,21L12,17.27Z"/></svg> ${anime.score}</span>` : ''}
-${anime.score && year ? ' • ' : ''}
-${year}
-</div>
-</a>`;
+  // Debug logging
+  if (!posterUrl || posterUrl.includes('data:image')) {
+    console.log(`Anime: ${anime.russian}, posterUrl: ${posterUrl}, posterUrl field: ${anime.posterUrl}, image: ${JSON.stringify(anime.image)}`);
+  }
+
+  let srcset = '';
+  if (anime.poster2x) {
+    srcset = ' srcset="' + anime.poster2x + ' 2x"';
+  }
+
+  let scoreHtml = '';
+  if (anime.score && anime.score > 0) {
+    scoreHtml = '<span class="anime-card-info-rating"><svg viewBox="0 0 24 24"><path d="M12,17.27L18.18,21L16.54,13.97L22,9.24L14.81,8.62L12,2L9.19,8.62L2,9.24L7.45,13.97L5.82,21L12,17.27Z"/></svg> ' + anime.score + '</span>';
+  }
+
+  let separator = '';
+  if (anime.score && year) {
+    separator = ' • ';
+  }
+
+  return '<a href="#details/' + anime.id + '" class="anime-card" data-id="' + anime.id + '">' +
+    '<div class="anime-card-poster">' +
+      '<img ' +
+        'src="' + posterUrl + '" ' +
+        srcset +
+        'alt="' + this.escapeHtml(anime.russian) + '" ' +
+        'loading="lazy" ' +
+        'class="anime-poster-img"' +
+      '>' +
+      '<div class="anime-card-play"><svg viewBox="0 0 24 24"><path d="M8,5.14V19.14L19,12.14L8,5.14Z"/></svg></div>' +
+    '</div>' +
+    '<h3 class="anime-card-title">' + this.escapeHtml(anime.russian) + '</h3>' +
+    '<div class="anime-card-info">' +
+      scoreHtml +
+      separator +
+      year +
+    '</div>' +
+  '</a>';
 },
 
 renderAnimeGrid(list, container) {
-if (!list || list.length === 0) {
-container.innerHTML = '<div class="empty-state"><h2>Ничего не найдено</h2><p>Попробуйте изменить параметры поиска.</p></div>';
-return;
-}
-container.innerHTML = list.map(anime => this.renderAnimeCard(anime)).join('');
+  if (!list || list.length === 0) {
+    container.innerHTML = '<div class="empty-state"><h2>Ничего не найдено</h2><p>Попробуйте изменить параметры поиска.</p></div>';
+    return;
+  }
+  container.innerHTML = list.map(anime => this.renderAnimeCard(anime)).join('');
 },
 
 async showHomePage() {
@@ -2158,16 +2255,19 @@ heroBg.classList.remove('loaded');
 
 const banner1x = this.getBannerUrl(hero);
 const banner2x = hero.poster2x || banner1x;
-heroBg.style.backgroundImage = `image-set(url(${banner1x}) 1x, url(${banner2x}) 2x)`;
+heroBg.style.backgroundImage = 'image-set(url(' + banner1x + ') 1x, url(' + banner2x + ') 2x)';
 
 const year = hero.aired_on ? new Date(hero.aired_on).getFullYear() : '';
 
 heroTitle.textContent = hero.russian;
-heroMeta.innerHTML = `
-${hero.kind ? `<span>${hero.kind}</span>` : ''}
-${year ? `<span>${year}</span>` : ''}
-${hero.score ? `<span class="anime-card-info-rating"><svg viewBox="0 0 24 24"><path d="M12,17.27L18.18,21L16.54,13.97L22,9.24L14.81,8.62L12,2L9.19,8.62L2,9.24L7.45,13.97L5.82,21L12,17.27Z"/></svg> ${hero.score}</span>` : ''}
-`;
+heroMeta.innerHTML =
+  (hero.kind ? '<span>' + hero.kind + '</span>' : '') +
+  (year ? '<span>' + year + '</span>' : '') +
+  (hero.score
+    ? '<span class="anime-card-info-rating"><svg viewBox="0 0 24 24"><path d="M12,17.27L18.18,21L16.54,13.97L22,9.24L14.81,8.62L12,2L9.19,8.62L2,9.24L7.45,13.97L5.82,21L12,17.27Z"/></svg> ' +
+      hero.score +
+      '</span>'
+    : '');
 heroDescription.textContent = hero.description || 'Описание отсутствует.';
 heroActions.innerHTML = `
 <a href="#details/${hero.id}" class="btn btn-primary" data-id="${hero.id}">Смотреть</a>
@@ -2687,7 +2787,7 @@ page.innerHTML = `
 </div>
 ${anime.score ? `
 <div class="details-meta-row">
-<span class="details-meta-label">Рейтинг:</span><span class="details-meta-value">⭐ ${anime.score}</span>
+<span class="details-meta-label">Рейтинг:</span><span class="details-meta-value"><svg viewBox="0 0 24 24" style="width: 16px; height: 16px; fill: currentColor; display: inline-block; margin-right: 4px; vertical-align: middle;"><path d="M12,17.27L18.18,21L16.54,13.97L22,9.24L14.81,8.62L12,2L9.19,8.62L2,9.24L7.45,13.97L5.82,21L12,17.27Z"/></svg>${anime.score}</span>
 </div>
 ` : ''}
 </div>
@@ -2938,39 +3038,55 @@ const userAvatar = this.state.user.avatar || '';
 const userBio = this.state.user.bio || '';
 
 page.innerHTML = `
-<div id="profile-page-grid">
-<div class="profile-sidebar">
-<div class="profile-avatar" style="${userAvatar ? `background-image: url(${userAvatar})` : ''}">${userAvatar ? '' : userInitial}</div>
-<h1>${this.escapeHtml(this.state.user.nickname)}</h1>
-<p>${this.escapeHtml(this.state.user.email)}</p>
-${userBio ? `<p style="color: var(--text-secondary); font-size: 13px; margin-top: 8px; line-height: 1.5;">${this.escapeHtml(userBio)}</p>` : ''}
-<div class="profile-stats">
-<div class="profile-stat">
-<div class="profile-stat-value">${this.state.shikiData.favorites || 0}</div>
-<div class="profile-stat-label">В избранном</div>
+<div class="profile-hero" style="background: linear-gradient(135deg, rgba(35, 36, 46, 0.8), rgba(26, 27, 35, 0.6)); border-radius: 24px; padding: 48px 40px; margin-bottom: 40px; border: 1px solid rgba(255, 255, 255, 0.1); backdrop-filter: blur(20px); box-shadow: 0 16px 48px rgba(0, 0, 0, 0.3);">
+<div style="display: flex; align-items: flex-start; gap: 32px;">
+<div class="profile-avatar" style="${userAvatar ? `background-image: url(${userAvatar})` : ''}; width: 160px; height: 160px; border-radius: 20px; flex-shrink: 0; border: 3px solid rgba(255, 255, 255, 0.2); box-shadow: 0 16px 40px rgba(0, 0, 0, 0.4);">${userAvatar ? '' : userInitial}</div>
+<div style="flex: 1;">
+<h1 style="font-size: 32px; font-weight: 800; margin-bottom: 8px; letter-spacing: -0.01em;">${this.escapeHtml(this.state.user.nickname)}</h1>
+<p style="color: var(--text-secondary); font-size: 15px; margin-bottom: 16px; letter-spacing: 0.2px;">${this.escapeHtml(this.state.user.email)}</p>
+${userBio ? `<p style="color: var(--text-secondary); font-size: 14px; margin-bottom: 24px; line-height: 1.6; max-width: 500px;">${this.escapeHtml(userBio)}</p>` : ''}
+<div style="display: flex; gap: 24px; margin-bottom: 24px;">
+<div>
+<div style="font-size: 28px; font-weight: 800; color: var(--text-primary); margin-bottom: 4px;">${this.state.shikiData.favorites || 0}</div>
+<div style="font-size: 13px; color: var(--text-secondary); font-weight: 500; letter-spacing: 0.2px;">В избранном</div>
 </div>
-<div class="profile-stat">
-<div class="profile-stat-value">${this.state.shikiData.watched || 0}</div>
-<div class="profile-stat-label">Просмотрено</div>
+<div>
+<div style="font-size: 28px; font-weight: 800; color: var(--text-primary); margin-bottom: 4px;">${this.state.shikiData.watched || 0}</div>
+<div style="font-size: 13px; color: var(--text-secondary); font-weight: 500; letter-spacing: 0.2px;">Просмотрено</div>
 </div>
 </div>
-<button class="btn btn-secondary" id="settingsBtn" style="width: 100%; margin-bottom: 12px;">
+<div style="display: flex; gap: 12px;">
+<button class="btn btn-secondary" id="settingsBtn" style="flex: 1; max-width: 200px;">
 <svg viewBox="0 0 24 24" fill="currentColor" style="width: 18px; height: 18px;">
 <path d="M19.14,12.94c0.04-0.3,0.06-0.61,0.06-0.94c0-0.32-0.02-0.64-0.07-0.94l2.03-1.58c0.18-0.14,0.23-0.41,0.12-0.61 l-1.92-3.32c-0.12-0.22-0.37-0.29-0.59-0.22l-2.39,0.96c-0.5-0.38-1.03-0.7-1.62-0.94L14.4,2.81c-0.04-0.24-0.24-0.41-0.48-0.41 h-3.84c-0.24,0-0.43,0.17-0.47,0.41L9.25,5.35C8.66,5.59,8.12,5.92,7.63,6.29L5.24,5.33c-0.22-0.08-0.47,0-0.59,0.22L2.74,8.87 C2.62,9.08,2.66,9.34,2.86,9.48l2.03,1.58C4.84,11.36,4.8,11.69,4.8,12s0.02,0.64,0.07,0.94l-2.03,1.58 c-0.18,0.14-0.23,0.41-0.12,0.61l1.92,3.32c0.12,0.22,0.37,0.29,0.59,0.22l2.39-0.96c0.5,0.38,1.03,0.7,1.62,0.94l0.36,2.54 c0.05,0.24,0.24,0.41,0.48,0.41h3.84c0.24,0,0.44-0.17,0.47-0.41l0.36-2.54c0.59-0.24,1.13-0.56,1.62-0.94l2.39,0.96 c0.22,0.08,0.47,0,0.59-0.22l1.92-3.32c0.12-0.22,0.07-0.47-0.12-0.61L19.14,12.94z M12,15.6c-1.98,0-3.6-1.62-3.6-3.6 s1.62-3.6,3.6-3.6s3.6,1.62,3.6,3.6S13.98,15.6,12,15.6z"/>
 </svg>
 <span>Настройки</span>
 </button>
-<button class="btn btn-secondary" id="logoutBtn" style="width: 100%;">Выйти</button>
+<button class="btn btn-secondary" id="logoutBtn" style="flex: 1; max-width: 200px;">Выйти</button>
+</div>
+</div>
+</div>
 </div>
 <div class="profile-main-content">
 <div class="profile-section">
-<h2>Избранное <a href="#favorites" data-nav="favorites">Смотреть все</a></h2>
-<div class="card-list" id="profile-favorites">${this.state.favorites.size > 0 ? this.renderLoader() : '<p style="color: var(--text-secondary);">Список избранного пуст.</p>'}</div>
+<h2 style="display: flex; align-items: center; gap: 8px; margin-bottom: 24px;">
+<svg viewBox="0 0 24 24" fill="currentColor" style="width: 24px; height: 24px; color: var(--text-secondary);">
+<path d="M12,17.27L18.18,21L16.54,13.97L22,9.24L14.81,8.62L12,2L9.19,8.62L2,9.24L7.45,13.97L5.82,21L12,17.27Z"/>
+</svg>
+<span>Избранное</span>
+<a href="#favorites" data-nav="favorites" style="margin-left: auto; font-size: 14px; color: var(--text-secondary); font-weight: 600; transition: color 0.2s ease;">Смотреть все →</a>
+</h2>
+<div class="card-list" id="profile-favorites">${this.state.favorites.size > 0 ? this.renderLoader() : '<p style="color: var(--text-secondary); text-align: center; padding: 40px 20px;">Список избранного пуст.</p>'}</div>
 </div>
 <div class="profile-section">
-<h2>История просмотра <a href="#history" data-nav="history">Смотреть все</a></h2>
-<div class="card-list" id="profile-history">${this.state.watchHistory.length > 0 ? '' : '<p style="color: var(--text-secondary);">История пуста.</p>'}</div>
-</div>
+<h2 style="display: flex; align-items: center; gap: 8px; margin-bottom: 24px;">
+<svg viewBox="0 0 24 24" fill="currentColor" style="width: 24px; height: 24px; color: var(--text-secondary);">
+<path d="M4,6h16V4H4C2.9,4,2,4.9,2,6v12c0,1.1,0.9,2,2,2h16v-2H4V6Z M20,2h-8v2h8V2Z M20,10H4v8h16V10Z"/>
+</svg>
+<span>История просмотра</span>
+<a href="#history" data-nav="history" style="margin-left: auto; font-size: 14px; color: var(--text-secondary); font-weight: 600; transition: color 0.2s ease;">Смотреть все →</a>
+</h2>
+<div class="card-list" id="profile-history">${this.state.watchHistory.length > 0 ? '' : '<p style="color: var(--text-secondary); text-align: center; padding: 40px 20px;">История пуста.</p>'}</div>
 </div>
 </div>
 `;
@@ -3116,68 +3232,82 @@ const showFavorites = this.state.user.showFavorites !== false;
 const showHistory = this.state.user.showHistory !== false;
 
 page.innerHTML = `
-<button class="back-btn" id="backToProfile">
-<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+<div style="max-width: 800px; margin: 0 auto;">
+<button class="back-btn" id="backToProfile" style="margin-bottom: 32px; display: flex; align-items: center; gap: 8px; padding: 10px 16px; background: linear-gradient(135deg, var(--bg-interactive), rgba(35, 36, 46, 0.8)); border: 1px solid rgba(255, 255, 255, 0.12); border-radius: 10px; color: var(--text-primary); font-weight: 600; cursor: pointer; transition: all 0.3s ease;">
+<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="width: 18px; height: 18px;">
 <path d="M19 12H5M12 19l-7-7 7-7"/>
 </svg>
 <span>Назад в профиль</span>
 </button>
 
-<div class="settings-page-content">
-<h1 style="font-size: 28px; font-weight: 800; margin-bottom: 8px;">Настройки аккаунта</h1>
-<p style="color: var(--text-secondary); margin-bottom: 32px;">Управление профилем и приватностью</p>
+<div style="background: linear-gradient(135deg, rgba(35, 36, 46, 0.8), rgba(26, 27, 35, 0.6)); border-radius: 24px; padding: 48px; border: 1px solid rgba(255, 255, 255, 0.1); backdrop-filter: blur(20px); box-shadow: 0 16px 48px rgba(0, 0, 0, 0.3);">
+<h1 style="font-size: 32px; font-weight: 800; margin-bottom: 8px; letter-spacing: -0.01em;">Настройки аккаунта</h1>
+<p style="color: var(--text-secondary); margin-bottom: 40px; font-size: 15px; letter-spacing: 0.2px;">Управление профилем и приватностью</p>
 
 <form id="settingsForm">
-<div class="settings-section">
-<h3>Профиль</h3>
-<div class="avatar-upload-wrapper">
-<div class="avatar-preview" id="avatarPreview" style="${userAvatar ? `background-image: url(${userAvatar})` : ''}">${userAvatar ? '' : userInitial}</div>
-<div class="avatar-upload-controls">
-<div class="file-input-wrapper">
+<div style="margin-bottom: 40px; padding-bottom: 40px; border-bottom: 1px solid rgba(255, 255, 255, 0.1);">
+<h3 style="font-size: 18px; font-weight: 700; margin-bottom: 24px; display: flex; align-items: center; gap: 8px;">
+<svg viewBox="0 0 24 24" fill="currentColor" style="width: 20px; height: 20px; color: var(--text-secondary);">
+<path d="M12,2C6.48,2,2,6.48,2,12s4.48,10,10,10s10-4.48,10-10S17.52,2,12,2z M12,5c1.66,0,3,1.34,3,3s-1.34,3-3,3s-3-1.34-3-3S10.34,5,12,5z M12,19.2c-2.5,0-4.71-1.28-6-3.22c0.03-1.99,4-3.08,6-3.08s5.97,1.09,6,3.08C16.71,17.92,14.5,19.2,12,19.2z"/>
+</svg>
+<span>Профиль</span>
+</h3>
+<div style="display: flex; gap: 32px; align-items: flex-start; margin-bottom: 24px;">
+<div class="avatar-preview" id="avatarPreview" style="width: 120px; height: 120px; border-radius: 16px; background: linear-gradient(135deg, var(--bg-interactive), var(--bg-interactive-hover)); display: grid; place-items: center; font-size: 48px; font-weight: 700; border: 3px solid rgba(255, 255, 255, 0.2); box-shadow: 0 12px 32px rgba(0, 0, 0, 0.4); flex-shrink: 0; ${userAvatar ? `background-image: url(${userAvatar})` : ''}; background-size: cover; background-position: center;">${userAvatar ? '' : userInitial}</div>
+<div style="flex: 1;">
+<div class="file-input-wrapper" style="margin-bottom: 12px;">
 <input type="file" id="avatarInput" accept="image/*">
-<label for="avatarInput" class="file-input-label">
-<svg viewBox="0 0 24 24" fill="currentColor">
+<label for="avatarInput" class="file-input-label" style="display: inline-flex; align-items: center; gap: 8px; padding: 12px 24px; background: linear-gradient(135deg, var(--bg-interactive), rgba(35, 36, 46, 0.8)); border: 1px solid rgba(255, 255, 255, 0.12); border-radius: 10px; color: var(--text-primary); font-weight: 600; cursor: pointer; transition: all 0.3s ease; box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);">
+<svg viewBox="0 0 24 24" fill="currentColor" style="width: 18px; height: 18px;">
 <path d="M21,19V5c0-1.1-0.9-2-2-2H5C3.9,3,3,3.9,3,5v14c0,1.1,0.9,2,2,2h14C20.1,21,21,20.1,21,19z M8.5,13.5l2.5,3.01L14.5,12 l4.5,6H5L8.5,13.5z"/>
 </svg>
 <span>Выбрать фото</span>
 </label>
 </div>
-<p style="font-size: 12px; color: var(--text-secondary); margin-top: 8px;">Рекомендуется: квадратное изображение, до 2 МБ</p>
+<p style="font-size: 13px; color: var(--text-secondary); letter-spacing: 0.2px;">Рекомендуется: квадратное изображение, до 2 МБ</p>
 </div>
 </div>
 
-<div class="form-group">
-<label for="bioInput">Описание профиля</label>
-<textarea id="bioInput" placeholder="Расскажите о себе...">${this.escapeHtml(userBio)}</textarea>
+<div class="form-group" style="margin-bottom: 0;">
+<label for="bioInput" style="display: block; margin-bottom: 8px; font-weight: 600; font-size: 14px; color: var(--text-primary); letter-spacing: 0.2px;">Описание профиля</label>
+<textarea id="bioInput" placeholder="Расскажите о себе..." style="width: 100%; background: var(--bg-tertiary); border: 1px solid rgba(255, 255, 255, 0.1); border-radius: 12px; padding: 12px 16px; color: var(--text-primary); font-size: 14px; transition: all 0.3s ease; font-weight: 500; letter-spacing: 0.2px; resize: vertical; min-height: 100px; font-family: inherit;">${this.escapeHtml(userBio)}</textarea>
 </div>
 </div>
 
-<div class="settings-section">
-<h3>Приватность</h3>
-<div class="privacy-toggle">
-<div class="privacy-toggle-label">
-<strong>Показывать избранное</strong>
-<span>Другие пользователи смогут видеть ваше избранное</span>
+<div style="margin-bottom: 40px;">
+<h3 style="font-size: 18px; font-weight: 700; margin-bottom: 24px; display: flex; align-items: center; gap: 8px;">
+<svg viewBox="0 0 24 24" fill="currentColor" style="width: 20px; height: 20px; color: var(--text-secondary);">
+<path d="M12,1L3,5v6c0,5.55,3.84,10.74,9,12c5.16-1.26,9-6.45,9-12V5L12,1z M10,17h4v-6h-4V17z M10,9h4V7h-4V9z"/>
+</svg>
+<span>Приватность</span>
+</h3>
+<div style="display: flex; flex-direction: column; gap: 16px;">
+<div style="display: flex; align-items: center; justify-content: space-between; padding: 16px; background: var(--bg-tertiary); border-radius: 12px; border: 1px solid rgba(255, 255, 255, 0.05); transition: all 0.3s ease;">
+<div>
+<strong style="display: block; font-size: 14px; font-weight: 600; color: var(--text-primary); margin-bottom: 4px; letter-spacing: 0.2px;">Показывать избранное</strong>
+<span style="display: block; font-size: 12px; color: var(--text-secondary); font-weight: 500; letter-spacing: 0.2px;">Другие пользователи смогут видеть ваше избранное</span>
 </div>
-<label class="toggle-switch">
+<label class="toggle-switch" style="margin: 0;">
 <input type="checkbox" id="showFavoritesToggle" ${showFavorites ? 'checked' : ''}>
 <span class="toggle-slider"></span>
 </label>
 </div>
-<div class="privacy-toggle">
-<div class="privacy-toggle-label">
-<strong>Показывать историю</strong>
-<span>Другие пользователи смогут видеть вашу историю просмотров</span>
+<div style="display: flex; align-items: center; justify-content: space-between; padding: 16px; background: var(--bg-tertiary); border-radius: 12px; border: 1px solid rgba(255, 255, 255, 0.05); transition: all 0.3s ease;">
+<div>
+<strong style="display: block; font-size: 14px; font-weight: 600; color: var(--text-primary); margin-bottom: 4px; letter-spacing: 0.2px;">Показывать историю</strong>
+<span style="display: block; font-size: 12px; color: var(--text-secondary); font-weight: 500; letter-spacing: 0.2px;">Другие пользователи смогут видеть вашу историю просмотров</span>
 </div>
-<label class="toggle-switch">
+<label class="toggle-switch" style="margin: 0;">
 <input type="checkbox" id="showHistoryToggle" ${showHistory ? 'checked' : ''}>
 <span class="toggle-slider"></span>
 </label>
 </div>
 </div>
+</div>
 
-<button type="submit" class="submit-btn">Сохранить изменения</button>
+<button type="submit" style="width: 100%; padding: 14px 24px; background: linear-gradient(135deg, var(--bg-interactive), var(--bg-interactive-hover)); color: var(--text-primary); border: 1px solid rgba(255, 255, 255, 0.1); border-radius: 12px; font-size: 15px; font-weight: 700; cursor: pointer; transition: all 0.3s cubic-bezier(0.34, 1.56, 0.64, 1); letter-spacing: 0.3px; box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);">Сохранить изменения</button>
 </form>
+</div>
 </div>
 `;
 
@@ -3287,7 +3417,16 @@ this.navigateTo('profile');
 };
 
 window.app = app;
-document.addEventListener("DOMContentLoaded", () => app.init());
+document.addEventListener("DOMContentLoaded", () => {
+  // Handle image load errors
+  document.addEventListener('error', (e) => {
+    if (e.target.tagName === 'IMG' && e.target.classList.contains('anime-poster-img')) {
+      e.target.src = PLACEHOLDER_IMAGE;
+    }
+  }, true);
+  
+  app.init();
+});
 </script>
 </body>
 </html>
